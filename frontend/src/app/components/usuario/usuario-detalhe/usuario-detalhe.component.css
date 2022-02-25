@@ -1,0 +1,11 @@
+.mg{
+  margin: 30px;
+}
+
+.display-movie {
+    display: grid;
+    align-content: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+  }
+  

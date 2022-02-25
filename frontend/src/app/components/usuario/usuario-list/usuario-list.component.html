@@ -1,0 +1,51 @@
+<div class="movies">
+    <section *ngFor="let user of usuarios$ | async; let i = index">
+        <mat-card style="position: relative">
+            <div style="position: absolute; right: 5px">
+                <button mat-icon-button>
+          <mat-icon (click)="enableEdit(user, i)">edit</mat-icon>
+        </button>
+            </div>
+            <ng-template #ear>
+                <h3 style="margin-bottom: 0px;font-weight: 600;color: rgb(121, 121, 231);">{{ user.usuario }}</h3>
+                <span>CNS: {{ user.cns == ''? '000.0000.0000.0000': user.cns}}</span>
+            </ng-template>
+
+            <div *ngIf="i === selectedIndex; else ear">
+                <p>
+                    <mat-form-field appearance="standard">
+                        <mat-label>Usuário</mat-label>
+                        <input matInput [(ngModel)]="usuarioName.usuario" />
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="standard">
+                        <mat-label>CNS</mat-label>
+                        <input matInput [(ngModel)]="usuarioName.cns" maxlength="15" />
+                    </mat-form-field>
+                </p>
+                <p>
+                    <mat-form-field appearance="standard">
+                        <mat-label>Bairro</mat-label>
+                        <input matInput [(ngModel)]="usuarioName.bairro" />
+                    </mat-form-field>
+                </p>
+            </div>
+
+            <div style="display: flex; gap: 2px;margin-top: 10px;">
+                <button style="background-color: rgb(65, 194, 151)" mat-button *ngIf="i === selectedIndex" (click)="update(user)">
+          Update
+        </button>
+                <button style="background-color: rgb(238, 99, 141)" mat-button (click)="deleteUsuario(user._id)">
+          Delete
+        </button>
+                <button style="background-color: rgb(218, 216, 132)" mat-button routerLink="/usuarios/{{ user._id }}">
+          Details
+        </button>
+                <button style="background-color: rgb(135, 137, 146)" mat-button *ngIf="i === selectedIndex" (click)="cancelEdit()">
+          Cancel
+        </button>
+            </div>
+        </mat-card>
+    </section>
+</div>

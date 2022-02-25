@@ -1,0 +1,130 @@
+<div style="padding: 20px">
+  <div style="padding: 20px">
+    <div style="display: flex; gap: 10px; margin-bottom: 10px">
+      <button
+        mat-fab
+        color="primary"
+        aria-label="Example icon button with a home icon"
+        routerLink="/"
+      >
+        <mat-icon>home</mat-icon>
+      </button>
+      <h1
+        style="
+          margin-top: 10px;
+          font-weight: 600;
+          color: rgb(121, 121, 231);
+          text-decoration: underline;
+        "
+      >
+        Controle Hiperdia
+      </h1>
+    </div>
+
+    <form class="example-form">
+      <div style="display: flex; gap: 0 30px">
+        <mat-form-field class="example-full-width">
+          <mat-label>Usuário</mat-label>
+          <input name="usuario" [(ngModel)]="newUsuario.usuario" matInput />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>CNS</mat-label>
+          <input
+            name="cns"
+            [(ngModel)]="newUsuario.cns"
+            matInput
+            maxlength="15"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Bairro</mat-label>
+          <input name="bairro" [(ngModel)]="newUsuario.bairro" matInput />
+        </mat-form-field>
+      </div>
+
+      <div style="display: flex; justify-content: space-between">
+        <div style="display: flex; justify-content: space-between; gap: 0 50px">
+          <mat-form-field appearance="fill">
+            <mat-label>ACS Bairro</mat-label>
+            <mat-select [(ngModel)]="newUsuario.acs" name="acs">
+              <mat-option value="Maria">Maria</mat-option>
+              <mat-option value="Pedro">Pedro</mat-option>
+              <mat-option value="Jose">Jose</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div style="margin-top: 25px">
+            <input
+              type="checkbox"
+              name="areap"
+              value="true"
+              name="diabete"
+              [(ngModel)]="newUsuario.diabete"
+              id="areap2"
+            />
+            <label for="areap1">Diabetico </label>
+          </div>
+
+          <div style="margin-top: 25px">
+            <input
+              type="checkbox"
+              name="areap"
+              value="true"
+              id="areap3"
+              checked="”checked”"
+              name="hipertenso"
+              [(ngModel)]="newUsuario.hipertenso"
+            />
+            <label for="areap2"> Hipertenso</label>
+          </div>
+        </div>
+
+        <div>
+          <button (click)="addNewUsuario()" mat-raised-button color="primary">
+            Adicionar
+          </button>
+        </div>
+      </div>
+    </form>
+    <mat-divider style="margin-top: 20px"></mat-divider>
+  </div>
+
+  <div style="float: right; margin-top: -20px; margin-right: 1.3%">
+    <mat-form-field>
+      <input
+      style="margin-top: 5px;"
+        matInput
+        type="search"
+        placeholder="Buscar por CNS"
+        class="search-input"
+        name="searchControl"
+        [(ngModel)]="searchControl"
+        maxlength="15"
+      />
+    </mat-form-field>
+    <mat-icon style="cursor: pointer;" (click)="doSearch()"
+      >search</mat-icon
+    >
+  </div>
+
+  <div style="margin: 0 1.3%">
+    <div style="display: flex; gap: 10px">
+      <h2
+        style="
+          font-weight: 600;
+          color: rgb(121, 121, 231);
+          text-decoration: underline;
+        "
+      >
+        Registro hipertensos e diabéticos
+      </h2>
+      <mat-icon style="margin-top: 1px; cursor: pointer; font-size: 30px;" (click)="updateList()"
+        >autorenew</mat-icon
+      >
+    </div>
+
+    <app-usuario-list></app-usuario-list>
+  </div>
+</div>

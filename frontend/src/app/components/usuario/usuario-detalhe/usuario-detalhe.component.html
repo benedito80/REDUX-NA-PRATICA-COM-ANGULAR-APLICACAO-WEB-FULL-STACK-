@@ -1,0 +1,25 @@
+<div class="mg">
+    <section class="display-movie">
+        <mat-card style="height: 280px; width: 360px">
+            <h2 style="margin-top: 10px;color: rgb(38, 38, 179);">{{ (usuario$ | async)?.usuario }}</h2>
+            <h3>CNS: {{ (usuario$ | async)?.cns }}</h3>
+            <h3>Bairro: {{ (usuario$ | async)?.bairro }}</h3>
+            <h3>ACS: {{ (usuario$ | async)?.acs }}</h3>
+            <div style="display: flex; justify-content: first baseline; gap: 30px">
+                <h3 style="margin-top: 20px;">
+                    Hipertenso: {{ (usuario$ | async)?.hipertenso == true ? "Sim" : "Não" }}
+                </h3>
+
+                <h3 style="margin-top: 20px;">
+                    Diabete: {{ (usuario$ | async)?.diabete == true ? "Sim" : "Não" }}
+                </h3>
+
+                <div class="example-button-container">
+                    <button mat-fab color="primary" aria-label="Example icon button with a home icon" routerLink="/usuarios">
+            <mat-icon>home</mat-icon>
+          </button>
+                </div>
+            </div>
+        </mat-card>
+    </section>
+</div>

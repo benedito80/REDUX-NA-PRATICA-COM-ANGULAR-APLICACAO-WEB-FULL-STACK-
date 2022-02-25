@@ -1,0 +1,15 @@
+{
+    "development": {
+        "PORT": 4100,
+        "IP_public_PORT": "http://localhost:4100",
+        "MONGODB_URI": "mongodb://localhost:27017/db_hiperdia",
+        "JWT_SECRET": "5b3l3rjc4X8K8SgkTB7FJaDE59G6SlVbTujqQoKNTQ6gTIcXk5qC7aEWTV7XM8VL6aM8rK9I9cSWNSj4rcAcqcNDmWkGDvAZyUr97xFq/uwX5W6Pi44Ga6vuut892DraOf02YwR93j7nXqZLH2tsekQOUy1AWHwv/ZKH+tDgYgymHpnBm6U1KP0AemepM3syE4kIaFCyVenfXal3+ELCydHicYcqgqIbasXF7hZslGMvG5q9fR6UIJbvJXFGqIDAPte0pbHd+1tcbL5Oyekp8paQV4wrglp1qmE8itjcFzxqtH5eN3/E+KoyYf6DWhnERIz56bAxgxmwxYcR1z7ofA==",
+        "JWT_EXP": "1d"
+    },
+    "production": {
+        "PORT": 80,
+        "MONGODB_URI": "mongodb://xxxxx/DB_Name",
+        "JWT_SECRET": "5b3l3rjc4X8K8SgkTB7FJaDE59G6SlVbTujqQoKNTQ6gTIcXk5qC7aEWTV7XM8VL6aM8rK9I9cSWNSj4rcAcqcNDmWkGDvAZyUr97xFq/uwX5W6Pi44Ga6vuut892DraOf02YwR93j7nXqZLH2tsekQOUy1AWHwv/ZKH+tDgYgymHpnBm6U1KP0AemepM3syE4kIaFCyVenfXal3+ELCydHicYcqgqIbasXF7hZslGMvG5q9fR6UIJbvJXFGqIDAPte0pbHd+1tcbL5Oyekp8paQV4wrglp1qmE8itjcFzxqtH5eN3/E+KoyYf6DWhnERIz56bAxgxmwxYcR1z7ofA==",
+        "JWT_EXP": "10m"
+    }
+}
